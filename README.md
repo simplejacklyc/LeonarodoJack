@@ -1,2 +1,6 @@
 # LeonarodoJack
-Make it count
+Make it count.
+
+I like programing, one day i will make something. 
+
+For the Horde.
