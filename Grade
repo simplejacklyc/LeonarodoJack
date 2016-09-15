@@ -36,15 +36,15 @@ public class Grades
         Scanner keyboard = new Scanner(System.in);
     	
         System.out.print("Enter the filename you want to read: ");
-        String ifilename = keyboard.nextLine();
+        String ifilename = "/Users/yucongli/Documents/workspace/Jack/src/1.txt";
         return ifilename;
     }
     public static String getoutputfile()
     {
         Scanner keyboard = new Scanner(System.in);
     	
-        System.out.print("Enter the filename you want to write: ");
-        String ofilename = keyboard.nextLine();
+        //System.out.print("Enter the filename you want to write: ");
+        String ofilename = "/Users/yucongli/Documents/workspace/Jack/src/output.txt";
         return ofilename;
     }
     public static double getave(double n1, double n2, double n3)
@@ -70,8 +70,3 @@ public class Grades
     	return l;
     }
 }
-    
-    
-    
-    
-        
