@@ -1,0 +1,77 @@
+import java.io.*;   
+import java.util.Scanner;        
+public class Grades
+{
+    public static void main(String[] args) throws IOException
+    {
+    	String infile = getinputfile();  
+    	String outfile = getoutputfile();
+    	
+    	File ifile = new File(infile);
+        Scanner inputFile = new Scanner(ifile); 
+        
+        PrintWriter outputFile = new PrintWriter(outfile); 
+    	
+        while (inputFile.hasNext())
+        {
+    		String name = inputFile.nextLine();
+    		double num1 = inputFile.nextDouble(); 
+    		double num2 = inputFile.nextDouble(); 
+    		double num3 = inputFile.nextDouble(); 
+    		
+    		double ave = getave(num1,num2,num3);
+      		String letter = nameletter(ave);
+    		
+      		outputFile.println(name);
+    		outputFile.println(letter);
+    		inputFile.nextLine();   
+        }
+        inputFile.close();
+        outputFile.close();
+    }
+    
+    
+    public static String getinputfile()
+    {
+        Scanner keyboard = new Scanner(System.in);
+    	
+        System.out.print("Enter the filename you want to read: ");
+        String ifilename = keyboard.nextLine();
+        return ifilename;
+    }
+    public static String getoutputfile()
+    {
+        Scanner keyboard = new Scanner(System.in);
+    	
+        System.out.print("Enter the filename you want to write: ");
+        String ofilename = keyboard.nextLine();
+        return ofilename;
+    }
+    public static double getave(double n1, double n2, double n3)
+    {
+    	double average = (n1 + n2 + n3) / 3;
+    	return average;   	  	
+    }
+    public static String nameletter(double a)
+    {
+    	String l;
+    	if(a >= 90)
+    	{
+    		l = "A";
+    	}
+    	else if(a >= 80)  
+    	{
+    		l = "B";
+    	}
+    	else
+    	{
+    		l = "C";
+    	}
+    	return l;
+    }
+}
+    
+    
+    
+    
+        
