@@ -1,0 +1,44 @@
+import java.util.Random;
+import java.util.Scanner;
+// This program is for play dice or card game
+// Jack version 1.0 10:59 9/15 2016
+public class PlayGames
+{
+    public static void main(String[] args) throws IOException
+    {
+    	Scanner keyboard = new Scanner(System.in);
+    	
+    	System.out.print("What Game you want to play, enter 1 as dice game, 2 as card game:");
+    	int g = keyboard.nextInt();
+    	
+    	dicegame();   	
+    }
+        
+    private static void dicegame() 
+    {
+    	Scanner keyboard = new Scanner(System.in);
+    	
+    	System.out.print("Enter the dice you want to roll: ");
+        int totaldice = keyboard.nextInt();     
+        System.out.print("Enter your guessing: ");
+        int guess = keyboard.nextInt();
+        int totalroll = 0;       
+        for(int counter = 1; counter <= totaldice; counter++)
+        {
+        	Random randomNumbers = new Random();
+            int roll = randomNumbers.nextInt(6)+1;
+            totalroll =+ roll;
+        }
+        if(guess == totalroll)
+        {
+        	System.out.println("Lucky you!");
+        }
+        else 
+        {
+        	System.out.println("Bad Lucky!");
+        }
+	}
+}    
+    
+    
+    
