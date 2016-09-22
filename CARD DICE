@@ -56,6 +56,13 @@ public class DC
     	System.out.print("How many players?");
     	int players = keyboard.nextInt();
     	
+    	for(int counter = 1; counter <= players; counter++)
+    	{
+    		getcard();
+    	}
+    	
+    	
+    	
     	
     	System.out.print("Please enter the first player's name");
         String firstplayer = keyboard.nextLine();
@@ -67,4 +74,59 @@ public class DC
     	
     	
     }
+    private static void getcard()
+    {
+    	Scanner keyboard = new Scanner(System.in);
+    	
+    	int sum = 0;
+        sum = gencard();//first card
+        sum = gencard();
+    	
+    	
+        int commond, c = 1;
+        do
+        {
+        	do
+        	{
+        		System.out.print("Want another card? Type 1 for yes, 2 for no.");
+                commond = keyboard.nextInt();
+        	}while(commond != 1 || commond != 2);
+        	
+        	if (commond == 1)
+        	{
+        		c += 1;
+        		gencard();
+        		//generate card for the user and tell them what it is
+        	}
+        	else if(commond == 2)
+        	{
+        		return;
+        	}
+        }while (commond == 1);
+                int n = c + 2;
+    }
+     
+    private static int gencard()
+    {
+    	Random card = new Random();
+    	int s,r;
+    	int a = card.nextInt(13)+1;
+    	int b = card.nextInt(4)+1;
+    	
+    			
+        if(a >= 10)
+        {
+        	r = 10;
+        }
+        else if(a < 10)
+        {
+        	r = a;
+        }
+    	
+    	s = s + r;
+    	getletter();
+    	
+    	
+    }
+    
 }    
