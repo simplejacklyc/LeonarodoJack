@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 // This program is for play dice or card game
 // Jack version 1.0 10:59 9/15 2016
-public class DC
+public class card
 {
     public static void main(String[] args) 
     {
@@ -46,70 +46,81 @@ public class DC
         }
         else 
         {
-        	System.out.println("Bad Lucky!");
+        	System.out.println("Bad Luck!");
         }
 	}
     private static void cardgame()
     {
     	Scanner keyboard = new Scanner(System.in);
     	
-    	System.out.print("How many players?");
-    	int players = keyboard.nextInt();
-    	
-    	for(int counter = 1; counter <= players; counter++)
+    	int num1 = card();
+    	int num2 = card();
+    	int num3 = card();
+
+    	if(num1 > num2)
     	{
-    		getcard();
+    			System.out.println("The first player wins.");
     	}
-    	
-    	
-    	
-    	
-    	System.out.print("Please enter the first player's name");
-        String firstplayer = keyboard.nextLine();
-        
-        System.out.print("Please enter the second player's name");
-        String firstplayer = keyboard.nextLine();
-    	
-    	
-    	
-    	
+    	else if(num2 > num1)
+        {
+    		System.out.println("The second player wins.");
+        }
+    	else 
+    	{
+    		System.out.println("It's tie.");
+    	}
+    	  	
     }
-    private static void getcard()
+    private static int card()
     {
-    	Scanner keyboard = new Scanner(System.in);
+    	Scanner key = new Scanner(System.in);   	
     	
-    	int sum = 0;
-        sum = gencard();//first card
-        sum = gencard();
+    	System.out.println("What's your name?");
+    	String name = key.nextLine();
     	
+    	System.out.println(name + ". Let's play");
     	
-        int commond, c = 1;
-        do
+        int hand = gencard();//first card        
+        hand = hand + gencard();//second card
+        
+        
+        if(hand <= 21)
+        {
+        	System.out.println("Your hand are " + hand);
+        }
+        else if(hand > 21)
+        {
+        	System.out.println("Your hand are " + hand + ", you are over 21, you lost.");
+        }
+    	   	
+        int commond = 0;
+        while(commond == 1)
         {
         	do
         	{
-        		System.out.print("Want another card? Type 1 for yes, 2 for no.");
-                commond = keyboard.nextInt();
+        		System.out.println("Want another card? Type 1 for yes, 2 for no.");
+                commond = key.nextInt();
         	}while(commond != 1 || commond != 2);
         	
         	if (commond == 1)
         	{
-        		c += 1;
-        		gencard();
+        		hand = hand + gencard();
+        		System.out.println("Your hand are " + hand);
         		//generate card for the user and tell them what it is
         	}
         	else if(commond == 2)
         	{
-        		return;
-        	}
-        }while (commond == 1);
-                int n = c + 2;
+        		
+        	}       	
+        }
+        return hand;
+        
     }
      
     private static int gencard()
     {
     	Random card = new Random();
-    	int s,r;
+    	int r = 0;
     	int a = card.nextInt(13)+1;
     	int b = card.nextInt(4)+1;
     	
@@ -122,11 +133,72 @@ public class DC
         {
         	r = a;
         }
+        getletter(a,b); 
+    	return r;    	   	 	
+    }
+    
+    private static void getletter(int a, int b)
+    {
+    	String num = null;
+    	String suit = null;
     	
-    	s = s + r;
-    	getletter();
-    	
-    	
+    	switch(b)
+    	{
+    	case 1:		
+    	    suit = "Spade";
+    	    break;
+    	case 2: 		
+    	    suit = "Heart";
+    	    break;
+    	case 3:
+    		suit = "Damond";
+    		break;
+    	case 4:
+    		suit = "Club";
+    	}
+    	switch(a)
+    	{
+    	case 1:
+    		num = "1";
+    		break;
+    	case 2:
+    		num = "2";
+    		break;
+    	case 3:
+    		num = "3";
+    		break;
+    	case 4:
+    		num = "4";
+    		break;
+    	case 5:
+    		num = "5";
+    		break;
+    	case 6:
+    		num = "6";
+    		break;
+    	case 7:
+    		num = "7";
+    		break;
+    	case 8:
+    		num = "8";
+    		break;
+    	case 9:
+    		num = "9";
+    		break;
+    	case 10:
+    		num = "10";
+    		break;
+    	case 11:
+    		num = "J";
+    		break;
+    	case 12:
+    		num = "Q";
+    		break;
+    	case 13:
+    		num = "K";
+    		break;
+    	}
+    	System.out.println("You get " + suit + " " + num);  
     }
     
 }    
