@@ -1,5 +1,5 @@
 Jack Li 9/27
-1.
+1.I think when people do coding, they always start with somehing they already have and make changes using other codes they used before, this will save tons of time of typing. Revision history is needed, then we can see what we correct about the program, also we may face other trouble later, codes have limit cause there are so many way to accomplish one goal, but when we need the code to accompish tem goals, it maybe not working, then we go back to what we have and figure another way out. 
 
 2."watch" it's like a "follow" in Twitter, if i watch someone, i may see what they upload when they do. " Star" is something you do if your like this user's work. "Fork" is for reader if they want a copy of this user's work, it will be in reader's account.
 
@@ -10,3 +10,7 @@ Jack Li 9/27
   Add Edge#9011176 bug (visual artifacts in scrollable dialogs)"
 
 5.Green for additions, red for deletions.
+
+6.Issues are advices that is creaded by anyone about the repository.Each issues has its own discussion forum. Requests are changes created by a user and can be accepted or rejected by a collaborators, also each pull request have own discussion forum. Difference between two of them is issue can be created by anyone, pull request can only be created by user. Issue is an suggestion, pull request can be a change.
+
+7.It's like an overview for all the activities such like pull requests and issues.
