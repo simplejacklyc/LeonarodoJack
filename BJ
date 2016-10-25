@@ -1,0 +1,61 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class BJ 
+{
+    private int totaldealer;
+    private int playernum;
+    private int totalplayer;
+    private int card;
+    private int race;
+    private String name;
+    private static final int HEART = 0;
+    private static final int SPADE = 1;
+    private static final int DIAMOND = 2;
+    private static final int GRASS = 3;
+
+	public static void main(String[] args) 
+	{
+		
+		BJ book = new BJ();
+		book.getplayernum();
+	    book.getname();	
+		book.getcard();
+		book.getrace();
+	}
+	
+	public void 
+	
+	public int getplayernum()
+	{
+		Scanner key = new Scanner(System.in);
+		System.out.print("How many players: ");
+		playernum = key.nextInt();
+		return playernum;
+	}
+	
+	public int getname()
+	{
+		Scanner key = new Scanner(System.in);
+		System.out.print("Enter your name:");
+		name = key.nextLine();
+		return playernum;
+	}
+	
+	
+	
+	public int getcard()
+	{
+		Random random = new Random();
+		card = random.nextInt(13);
+		return card;		
+	}
+	
+	public int getrace()
+	{
+		Random random = new Random();
+		race = random.nextInt(4);
+		return race;
+	}
+
+}
